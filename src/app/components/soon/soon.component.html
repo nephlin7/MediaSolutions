@@ -16,11 +16,14 @@
            
        <div class="row">
           <div class="input-group col-12 col-lg-10 input-group-newsletter">
-              <input type="email" [(ngModel)]="Subscriptor.Email" name="Email" class="form-control" placeholder="Enter email..." aria-label="Enter email..." aria-describedby="basic-addon">
+              <input #email="ngModel" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required type="email" [(ngModel)]="Subscriptor.Email" name="Email" class="form-control" placeholder="Enter email..." aria-label="Enter email..." aria-describedby="basic-addon">
               <div class="input-group-append">
-                <button class="btn btn-secondary" (click)="save()" type="button">Notify Me!</button>
+                <button class="btn btn-secondary" [disabled]="email.invalid" (click)="save()" type="button">Notify Me!</button>
               </div>
-            </div>
+          </div>
+          <div class="input-group col-12">
+            <span style="color: #c81bb6;"> {{Message}}</span>
+          </div>
        </div>
          </div>
        </div>

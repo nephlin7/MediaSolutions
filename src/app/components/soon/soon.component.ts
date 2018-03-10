@@ -11,7 +11,7 @@ import { Subscriptor } from '../../interfaces/subscriptor.interface';
 export class SoonComponent implements OnInit {
   bussinessName = 'Media Solutions';
   year = new Date().getFullYear();
-  
+  Message = "";
   constructor( private _subscribersService:SubscribersService ) { }
 
   ngOnInit() {
@@ -23,13 +23,14 @@ export class SoonComponent implements OnInit {
 
   save(){
     if(this.Subscriptor.Email == ""){
-      console.log("Ingresar un email");
+     this.Message = "Email required"
     }else{
       console.log(this.Subscriptor)
       this._subscribersService.newSubscriber( this.Subscriptor )
         .subscribe( data =>{
           alert('Thanks ' + this.Subscriptor.Email + ' for your interest on our services :).');
           this.Subscriptor.Email = "";
+          this.Message = "";
         },
       error=> console.error(error));
       console.log(this.Subscriptor.Email);
