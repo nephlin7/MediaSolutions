@@ -1,0 +1,39 @@
+
+ <div class="overlay"></div>
+
+ <div class="masthead">
+   <div class="masthead-bg"></div>
+   <div class="container h-100">
+     <div class="row h-100">
+       <div class="col-12 my-auto">
+         <div class="masthead-content text-white py-5 py-md-0">
+           <div style="margin-bottom: 50px;">
+              <img src="../../../assets/img/logoMS.svg" width="200" class="responsive-img" alt="{{bussinessName}}">
+           </div>
+            <h1 class="mb-3">COMING SOON !</h1>
+           <p class="mb-5">We're working hard to finish the development of this site. Our target launch date is
+             <strong>Jul 2018</strong>! Sign up for updates using the form below!</p>
+           
+       <div class="row">
+          <div class="input-group col-12 col-lg-10 input-group-newsletter">
+              <input type="email" [(ngModel)]="Subscriptor.Email" name="Email" class="form-control" placeholder="Enter email..." aria-label="Enter email..." aria-describedby="basic-addon">
+              <div class="input-group-append">
+                <button class="btn btn-secondary" (click)="save()" type="button">Notify Me!</button>
+              </div>
+            </div>
+       </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+ <div class="social-nav social-footer" style="opacity: 1;"> 
+    <ul> 
+      <li> <a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+      <li> <a href="#" target="_blank"><i class="fa fa-google-plus"></i></a> </li>
+      <li> <a href="#" target="_blank"><i class="fa fa-instagram"></i></a> </li> 
+     </ul> 
+   </div>
+  <div class="copy-footer">
+    {{bussinessName}} | &copy; {{year}}
+  </div>
